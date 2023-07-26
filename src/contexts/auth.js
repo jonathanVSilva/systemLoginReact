@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }) => {
 
   // Cadastrar um conta 
   const signup = (email, password) => {
-    const userStorage = JSON.parse(localStorage.getItem("users_db"));
+    const userStorage = JSON.parse(localStorage.getItem("   "));
 
     const hasUser = userStorage?.filter((user) => user.email === email);
 
