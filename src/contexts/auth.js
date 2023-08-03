@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
   
-  // Entrar na conta
+  // Enter the account
   const signin = (email, password) => {
     const userStorage = JSON.parse(localStorage.getItem("users_db"));
     const hasUser = userStorage?.filter((user) => user.email === email);
@@ -36,7 +36,7 @@ export const AuthProvider = ({ children }) => {
     };
   };
 
-  // Cadastrar um conta 
+  // Register an account
   const signup = (email, password) => {
     const userStorage = JSON.parse(localStorage.getItem("users_db"));
     const hasUser = userStorage?.filter((user) => user.email === email);
