@@ -19,13 +19,12 @@ const Signin = () => {
       setError("Preencha todos os campos");
       return;
     }
-    
+
     const res = signin(email, senha);
     if (res) {
       setError(res);
       return;
     }
-
     navigate("/home");
   };
 
@@ -39,14 +38,18 @@ const Signin = () => {
           value={email}
           onChange={(e) => [setEmail(e.target.value), setError("")]}
         />
+
         <Input 
           type="password"
           placeholder="Digite sua Senha"
           value={senha}
           onChange={(e) => [setSenha(e.target.value), setError("")]}
         />
+
         <C.LabelError>{error}</C.LabelError>
+
         <Button Text="Entrar" onClick={handleLogin} />
+        
         <C.LabelSignup>
           Não tem conta?
           <C.Strong>
