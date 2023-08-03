@@ -1,7 +1,7 @@
-import React from "react";
-import Input from "../../components/Input";
+import React, { useState }from "react";
+import Input from "../../components/input";
 import Button from "../../components/Button";
-import * as C from "./styled";
+import * as C from "./styles";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 
@@ -19,6 +19,7 @@ const Signin = () => {
       setError("Preencha todos os campos");
       return;
     }
+    
     const res = signin(email, senha);
     if (res) {
       setError(res);
@@ -32,7 +33,7 @@ const Signin = () => {
     < C.Container>
       <C.Label>SISTEMA DE LOGIN</C.Label>
       <C.Content>
-        <Input 
+        <Input
           type="email"
           placeholder="Digite seu Email"
           value={email}

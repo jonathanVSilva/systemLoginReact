@@ -7,7 +7,7 @@ export const AuthProvider = ({ children }) => {
   
   useEffect(() => {
     const userToken = localStorage.getItem("user_token");
-    const userStorage = localStorage.getItem("user_db");
+    const userStorage = localStorage.getItem("users_db");
 
     if(userToken && userStorage){
       const hasUser = JSON.parse(userStorage)?.filter(
@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }) => {
   
   // Entrar na conta
   const signin = (email, password) => {
-    const userStorage = JSON.parser(localStorage.getItem("users_db"));
+    const userStorage = JSON.parse(localStorage.getItem("users_db"));
     const hasUser = userStorage?.filter((user) => user.email === email);
 
     if (hasUser?.length) {
@@ -33,13 +33,12 @@ export const AuthProvider = ({ children }) => {
       }
     } else {
         return "Usuário não cadastrado";
-    }
+    };
   };
 
   // Cadastrar um conta 
   const signup = (email, password) => {
-    const userStorage = JSON.parse(localStorage.getItem("   "));
-
+    const userStorage = JSON.parse(localStorage.getItem("users_db"));
     const hasUser = userStorage?.filter((user) => user.email === email);
 
     if (hasUser?.length) {
